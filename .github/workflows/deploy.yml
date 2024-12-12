@@ -123,8 +123,8 @@ jobs:
           # Check if the web server is responding correctly
           ssh -i private_key.pem -o StrictHostKeyChecking=no $SSH_USER@$SERVER_IP << EOF
             # sudo systemctl stop httpd
-            curl -f http://localhost/nonexistentpage || exit 1
-            # curl -f http://localhost || exit 1
+            # curl -f http://localhost/nonexistentpage || exit 1
+            curl -f http://localhost || exit 1
           EOF
 
           # Clean up private key
